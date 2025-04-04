@@ -1,4 +1,3 @@
-import time
 import pytest
 import data
 import curl
@@ -56,5 +55,5 @@ def login_in_account_firefox(driver_firefox):
     driver_firefox.find_element(*Locators.LOG_EMAIL).send_keys(data.LOGIN_EMAIL)
     driver_firefox.find_element(*Locators.LOG_PASSWORD).send_keys(data.PASSWORD)
     driver_firefox.find_element(*Locators.BUT_LOGIN).click()
-    WebDriverWait(driver_firefox, 3).until(expected_conditions.visibility_of_element_located(Locators.BUT_ORDER_PLACE))
+    WebDriverWait(driver_firefox, 3).until(expected_conditions.invisibility_of_element_located(Locators.INVISIBLE_ELEMENT))
     return driver_firefox

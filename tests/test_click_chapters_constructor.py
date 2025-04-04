@@ -54,6 +54,5 @@ class TestClickChapterFillingsFirefox:
         # act
         driver_firefox.find_element(*Locators.BUT_CHAPTER_FILLINGS).click()
         WebDriverWait(driver_firefox, 3).until(expected_conditions.text_to_be_present_in_element_attribute(Locators.BUT_CHAPTER_FILLINGS, 'class', 'tab_tab_type_current__2BEPc'))
-
         # assert
         assert 'tab_tab_type_current__2BEPc' in driver_firefox.find_element(*Locators.BUT_CHAPTER_FILLINGS).get_attribute("class")
